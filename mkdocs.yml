@@ -63,6 +63,9 @@ markdown_extensions:
 #   annotate:
 #     json: [.s2]
 
+extra:
+  generator: false
+
 
 copyright: |
   &copy; 2023 <a href="https://celetel.com"  target="_blank" rel="noopener">Celetel Technologies Pvt Ltd</a>
