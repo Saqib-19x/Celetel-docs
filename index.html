@@ -1,0 +1,1810 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="VOICE%20APIs/">
+      
+      <link rel="icon" href="img/logo.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Celetel API docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sms-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Celetel API docs" class="md-header__button md-logo" aria-label="Celetel API docs" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Celetel API docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SMS API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="." class="md-tabs__link md-tabs__link--active">
+      SMS API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="VOICE%20APIs/" class="md-tabs__link">
+      VOICE APIs
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Celetel API docs" class="md-nav__button md-logo" aria-label="Celetel API docs" data-md-component="logo">
+      
+  <img src="img/logo.png" alt="logo">
+
+    </a>
+    Celetel API docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SMS API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        SMS API
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help-with-formatting-special-types-of-messages" class="md-nav__link">
+    Help with Formatting Special Types of Messages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-description" class="md-nav__link">
+    Protocol Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocol Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-of-bulk-messages" class="md-nav__link">
+    Types of Bulk Messages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow-of-message-and-delivery-reports" class="md-nav__link">
+    Data Flow of Message and Delivery Reports
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow of Message and Delivery Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delivered-message" class="md-nav__link">
+    Delivered Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undelivered-message" class="md-nav__link">
+    Undelivered Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rejected-message" class="md-nav__link">
+    Rejected Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buffered-temporary-undelivered-message" class="md-nav__link">
+    Buffered (Temporary Undelivered) Message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-sms" class="md-nav__link">
+    Sending SMS
+  </a>
+  
+    <nav class="md-nav" aria-label="Sending SMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#json-fields-in-submitted-message" class="md-nav__link">
+    JSON Fields in Submitted Message
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-submission-urls" class="md-nav__link">
+    Example of Submission URLs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-messages-in-gsm-encoding" class="md-nav__link">
+    Text Messages in GSM Encoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-from-bash-shell" class="md-nav__link">
+    Examples (From Bash Shell)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unicode-messages" class="md-nav__link">
+    Unicode Messages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wap-server-indication-wsi-messages" class="md-nav__link">
+    WAP Server Indication (WSI) Messages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response-when-sending-sms" class="md-nav__link">
+    HTTP Response When Sending SMS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-codes" class="md-nav__link">
+    Error Codes
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Codes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-handle-errors" class="md-nav__link">
+    How to Handle Errors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiving-dlr" class="md-nav__link">
+    Receiving DLR
+  </a>
+  
+    <nav class="md-nav" aria-label="Receiving DLR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dlr-error-codes" class="md-nav__link">
+    DLR Error Codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delivery-report-events" class="md-nav__link">
+    Delivery Report Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-tables" class="md-nav__link">
+    Additional Tables
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gsm-character-set" class="md-nav__link">
+    GSM character set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-characters-in-alphanumeric-sender" class="md-nav__link">
+    Supported Characters in Alphanumeric Sender
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Characters in Alphanumeric Sender">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#special-characters" class="md-nav__link">
+    Special characters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-letters-and-digits" class="md-nav__link">
+    Supported Letters and Digits
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VOICE%20APIs/" class="md-nav__link">
+        VOICE APIs
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sms-api">SMS API</h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>HTTP Bulk Service API enables customers to send SMS over HTTP/HTTPS and to receive Delivery Reports (DLRs) over the same protocol.</p>
+<h3 id="help-with-formatting-special-types-of-messages"><strong>Help with Formatting Special Types of Messages</strong></h3>
+<p>Celetel HTTP Bulk Service API helps customers to format special types of messages, such as concatenated messages and WSI (WAP Service Indication) messages. HTTP Bulk Service API may split the submitted message into several physical SMS messages (concatenated messages) or reject the message because it is too long. Customer balance is charged per physical SMS, as in details described in the following text.</p>
+<h2 id="protocol-description"><strong>Protocol Description</strong></h2>
+<p>This chapter provides information about the supported types of bulk SMS messages and the data flow of the messages and delivery reports.</p>
+<p>It also provides information on the types of cases for the delivery status of the messages.</p>
+<h3 id="types-of-bulk-messages"><strong>Types of Bulk Messages</strong></h3>
+<p>Customers can send different types of messages:</p>
+<ul>
+<li>GSM Text messages</li>
+<li>Unicode Text Messages</li>
+<li>WAP Service Indicators (WSI)</li>
+</ul>
+<h3 id="data-flow-of-message-and-delivery-reports"><strong>Data Flow of Message and Delivery Reports</strong></h3>
+<p>The message is submitted over HTTP/HTTPS from the customer to Celetel HTTP Bulk Service API. When API has information on what happened with the delivery of the message (described in 2.5.2 Delivery Report Events section), it will send (also using HTTP/HTTPS) an event to the Callback DLR URL provided by the customer.</p>
+<p>There are four cases:</p>
+<ul>
+<li>Delivered message (DELIVERED)</li>
+<li>Undelivered message (UNDELIVERED)</li>
+<li>Rejected message (REJECTED)</li>
+<li>Buffered (temporary undelivered) message (BUFFERED) followed by final DLR event, delivered (DELIVERED), undelivered (UNDELIVERED) or rejected (REJECTED)</li>
+</ul>
+<p>When the message cannot be delivered as fast as possible due to temporary problems and if the DLR mask allows sending buffered events to customers for each delivery attempt, DLR event Buffered will be sent to the Callback DLR URL, as described in 2.2.4 Buffered (Temporary Undelivered Message) section.</p>
+<p>If the DLR mask does not allow sending DLR event Buffered to the customer, no notification will be provided until the final event, Delivered or Undelivered. When the message is delivered (at first attempt or at any latter attempt), DLR event Delivered will be sent, as described in 2.2.1 Delivered Message section.</p>
+<p>When the Bulk Service decides that a message cannot be delivered (at first attempt or at any latter attempt or when message validity expires), a DLR event Undelivered will be sent, as described in 2.2.2 Undelivered Message section.</p>
+<p>When the message is rejected immediately on submission, the customer will be informed with HTTP response about the reason, as described in 2.2.3 Rejected Message section. Rejection may also happen later, and the customer will be informed using DLR event Rejected.</p>
+<p>The following sections explain these cases more in detail.</p>
+<h4 id="delivered-message"><strong>Delivered Message</strong></h4>
+<p>When a customer submits an SMS to Celetel Bulk System, the message will be delivered to its destination as fast as possible. When Celetel Bulk System receives confirmation from a destination that the message is delivered, it will send a DLR Event Delivered to Callback DLR URL.</p>
+<h4 id="undelivered-message"><strong>Undelivered Message</strong></h4>
+<p>This case is similar to Delivered Message except it describes a failure in delivery. Callback DLR URL will be called with DLR event Undelivered and a reason. No further attempt to deliver will be made. Messages are undelivered in cases when:</p>
+<ul>
+<li>The destination number does not represent an existing mobile phone.</li>
+<li>There is no route to the required destination.</li>
+<li>If Celetel Bulk System was not able to deliver the message to the phone during the validity period (which is by default 24 hours).</li>
+<li>In case of some other permanent error that makes a delivery to mobile phone impossible.</li>
+</ul>
+<h4 id="rejected-message"><strong>Rejected Message</strong></h4>
+<p>Messages can be rejected by Celetel Bulk System in several cases:</p>
+<ul>
+<li>When the username and/or password submitted in the request don't match the one configured for the account.</li>
+<li>When the account is disabled.</li>
+<li>When there is no money on the account balance.</li>
+<li>When the destination is not allowed for the customer.</li>
+<li>When the sender field contains not allowed characters.</li>
+<li>When the format of any parameter is not correct.</li>
+<li>When the contents of some parameter (for example parameter text for text message submission) contains characters not supported with selected data coding.</li>
+<li>Rejection can happen:<blockquote>
+<ul>
+<li>immediately on submission, in which case the error will be returned to the customer with HTTP/HTTPS response on the submission request.</li>
+<li>or it can happen later, in which case the Callback DLR URL will be called with the DLR event Rejected.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>Data flow for the message that is rejected later, after successful submission:</p>
+<h4 id="buffered-temporary-undelivered-message"><strong>Buffered (Temporary Undelivered) Message</strong></h4>
+<p>If Celetel HTTP Bulk Service cannot deliver the message at the first attempt, and the DLR mask allows sending of buffered messages to the customer, DLR will be sent to the customer for each attempt with the reason of temporary failed delivery.</p>
+<p>Reasons for temporary failures can be:</p>
+<ul>
+<li>Absent subscriber (subscriber is not within reach of destination network or his phone is offline).</li>
+<li>The mobile phone buffer for SMS is full.</li>
+<li>
+<p>Any other temporary failures of mobile device or destination mobile network when there is a chance to be resolved within the message validity period.
+Celetel Bulk System will stop trying to deliver the message in the following situations:</p>
+</li>
+<li>
+<p>The message is successfully delivered, in which case the DLR event Delivered is sent.</p>
+</li>
+<li>A permanent error happened which makes delivery impossible (e.g. the destination number does not exist). DLR event Undelivered or Rejected is sent.</li>
+<li>Message validity period expired - within the validity period, Celetel Bulk System was not able to deliver the message to the mobile phone. DLR event Undelivered or Rejected is sent.</li>
+</ul>
+<h2 id="sending-sms">Sending SMS</h2>
+<blockquote>
+<p>Messages are sent using POST HTTP Method, to the URLs provided together with the credentials.</p>
+<p>HTTP Post JSON payload must be encoded using UTF-8 encoding.</p>
+</blockquote>
+<h3 id="json-fields-in-submitted-message"><strong>JSON Fields in Submitted Message</strong></h3>
+<p>JSON fields in submitted message, common for all types:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Type of a message. It can be: text or wsi.<br> For type='text':- text - UTF-8 encoded text of message content,- dcs - message coding, gsm (for GSM messages) or ucs (for Unicode messages).For type='wsi':- url - URL to show in WSI,- title - Title of WSI.</td>
+</tr>
+<tr>
+<td>sender</td>
+<td>string</td>
+<td>SMS originator address, alphanumeric or numeric.</td>
+</tr>
+<tr>
+<td>receiver</td>
+<td>string</td>
+<td>SMS destination address, numeric.</td>
+</tr>
+<tr>
+<td>dlrMask</td>
+<td>integer</td>
+<td>DLR mask represents DLRs customer wants to receive, described in the following text (optional, default=19).</td>
+</tr>
+<tr>
+<td>dlrUrl</td>
+<td>string</td>
+<td>DLR URL where to send DLR callbacks (optional, if not present, the one set in an account settings in the platform is used).</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>object</td>
+<td>Custom JSON object that will be sent back as a part of each DLR (optional, default empty).</td>
+</tr>
+<tr>
+<td>auth</td>
+<td>object</td>
+<td>Authentication object with two fields:<br>username - account usernamepassword - account password.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-of-submission-urls"><strong>Example of Submission URLs</strong></h3>
+<div class="highlight"><span class="filename">For HTTP</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">h</span><span class="kc">tt</span><span class="err">p</span><span class="p">:</span><span class="c1">//sms.Celetel.info:12020/bulk/sendsms</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">For HTTPS</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="err">h</span><span class="kc">tt</span><span class="err">ps</span><span class="p">:</span><span class="c1">//sms.Celetel.info:12021/bulk/sendsms</span>
+</code></pre></div>
+<h3 id="text-messages-in-gsm-encoding"><strong>Text Messages in GSM Encoding</strong></h3>
+<p>SMS to be sent is encoded in JSON document:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testpassword&quot;</span><span class="p">},</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BulkTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4179123456&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="nt">&quot;dcs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GSM&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is test message&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nt">&quot;dlrMask&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="nt">&quot;dlrUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://my-server.com/dlrjson.php&quot;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+and it must be submitted to the URL (HTTP or HTTPS) that is given together with the credentials.</p>
+<h3 id="examples-from-bash-shell"><strong>Examples (From Bash Shell)</strong></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">For HTTP</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="err">CONTENT=&#39;</span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testpassword&quot;</span><span class="p">},</span><span class="w"> </span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BulkTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;41787078880&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="nt">&quot;dcs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GSM&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is test message&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="nt">&quot;dlrMask&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="nt">&quot;dlrUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://my-server.com/dlrjson.php&quot;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="p">}</span><span class="err">&#39;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="err">curl</span><span class="w"> </span><span class="mi">-</span><span class="err">L</span><span class="w"> </span><span class="s2">&quot;http://sms.Celetel.info:12020/bulk/sendsms&quot;</span><span class="w"> </span><span class="mi">-</span><span class="err">XPOST</span><span class="w"> </span><span class="mi">-</span><span class="err">d</span><span class="w"> </span><span class="s2">&quot;$CONTENT&quot;</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">For HTTPS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="err">CONTENT=&#39;</span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testpassword&quot;</span><span class="p">},</span><span class="w"> </span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BulkTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;41787078880&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="nt">&quot;dcs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GSM&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is test message&quot;</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="nt">&quot;dlrMask&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w"> </span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="nt">&quot;dlrUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://my-server.com/dlrjson.php&quot;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">}</span><span class="err">&#39;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="err">curl</span><span class="w"> </span><span class="mi">-</span><span class="err">L</span><span class="w"> </span><span class="s2">&quot;https://sms.Celetel.info:12021/bulk/sendsms&quot;</span><span class="w"> </span><span class="mi">-</span><span class="err">XPOST</span><span class="w"> </span><span class="mi">-</span><span class="err">d</span><span class="w"> </span><span class="s2">&quot;$CONTENT&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="unicode-messages"><strong>Unicode Messages</strong></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testpassword&quot;</span><span class="p">},</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BulkTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4179123456&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;dcs&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UCS&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is test message with some UTF-8 characters üöä€ &quot;</span><span class="p">,</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="nt">&quot;dlrMask&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="nt">&quot;dlrUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://my-server.com/dlrjson.php&quot;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<blockquote>
+<p>Message text must be UTF-8 encoded as well, but it will be sent to the destination device encoded using UTF-16 protocol. Content is converted by Bulk Service.</p>
+<p>Note that GSM messages, when long, need to be encoded to 140 bytes or 160 septets when content is converted to GSM encoding. Available number of bytes is further reduced by the length of the UDH (used for concatenation). Unicode messages use the same number of bytes (140) but require more bytes for each character (UTF-16 encoding). This means, when message content is longer, and must be sent as concatenated parts, Unicode messages will require more parts than GSM messages.</p>
+</blockquote>
+<h3 id="wap-server-indication-wsi-messages"><strong>WAP Server Indication (WSI) Messages</strong></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wsi&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="nt">&quot;auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6666_TESTHTTP&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TerWAvAs&quot;</span><span class="p">},</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BulkTest&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="nt">&quot;receiver&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;41787078880&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.Celetel.com/en/&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Celetel&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">    </span><span class="nt">&quot;dlrMask&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="nt">&quot;dlrUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://my-server.com/dlrjson.php&quot;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="http-response-when-sending-sms"><strong>HTTP Response When Sending SMS</strong></h3>
+<div class="admonition sucesss">
+<p class="admonition-title">Sucesss</p>
+<p>If the message is accepted to be sent, HTTP status code is 202 and JSON response is:   </p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;msgId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9325d0a8-2638-11e6-afe7-bffc7cc8fa4f&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;numParts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>Where:</p>
+<ul>
+<li>msgId - message ID formatted as UUID and used for referencing further this message, for example in DLR.</li>
+<li>numParts - number of parts if the message is concatenated. If the message can be sent as one SMS part (without concatenation), numParts will be 1.</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Failure</p>
+<p>If the message is rejected, the HTTP status code is 420 and the response is:</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;107&quot;</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invalid sender&quot;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>API may also return other error codes from the 5xx range. In this case, there is no JSON response and error codes conform to standard HTTP error codes.</p>
+<h2 id="error-codes"><strong>Error Codes</strong></h2>
+<p>Error codes are listed in the following table:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Error code</strong></th>
+<th><strong>Value</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RC_APPLICATION_ERROR</td>
+<td>101</td>
+<td>Internal application error.</td>
+</tr>
+<tr>
+<td>RC_ENCODING_ERROR</td>
+<td>102</td>
+<td>Encoding not supported or message not encoded with selected encoding.</td>
+</tr>
+<tr>
+<td>RC_NO_ACCOUNT</td>
+<td>103</td>
+<td>No account with given username/password.</td>
+</tr>
+<tr>
+<td>RC_IP_NOT_ALLOWED</td>
+<td>104</td>
+<td>Sending from clients IP address not allowed.</td>
+</tr>
+<tr>
+<td>RC_THROTTLING_ERROR</td>
+<td>105</td>
+<td>Too many messages were submitted within a short period of time. Resend later.</td>
+</tr>
+<tr>
+<td>RC_BLACKLISTED_SENDER</td>
+<td>106</td>
+<td>Sender contains words blacklisted on destination.</td>
+</tr>
+<tr>
+<td>RC_INVALID_SENDER</td>
+<td>107</td>
+<td>Sender contains illegal characters.</td>
+</tr>
+<tr>
+<td>RC_MESSAGE_TOO_LONG</td>
+<td>108</td>
+<td>The message is too long.</td>
+</tr>
+<tr>
+<td>RC_BAD_CONTENT_FORMAT</td>
+<td>109</td>
+<td>The format of the text parameter is wrong.</td>
+</tr>
+<tr>
+<td>RC_MISSING_MANDATORY_PARAMETER</td>
+<td>110</td>
+<td>Mandatory parameter is missing.</td>
+</tr>
+<tr>
+<td>RC_UNKNOWN_MESSAGE_TYPE</td>
+<td>111</td>
+<td>Unknown message type.</td>
+</tr>
+<tr>
+<td>RC_BAD_PARAMETER_VALUE</td>
+<td>112</td>
+<td>Format of some parameter is wrong.</td>
+</tr>
+<tr>
+<td>RC_NO_CREDIT</td>
+<td>113</td>
+<td>No credit on account balance.</td>
+</tr>
+<tr>
+<td>RC_NO_ROUTE</td>
+<td>114</td>
+<td>No route for given destination.</td>
+</tr>
+<tr>
+<td>RC_CONCAT_ERROR</td>
+<td>115</td>
+<td>Message cannot be split into concatenated messages (e.g. too many parts will be needed).</td>
+</tr>
+<tr>
+<td>RC_LOOP_DETECTED</td>
+<td>116</td>
+<td>Loop detected.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-handle-errors"><strong>How to Handle Errors</strong></h3>
+<p>When the customer receives an HTTP status code <mark>420 METHOD_INVOCATION_FAILURE</mark>, he should not retry the submission of the message, except in the case of <mark>RC_THROTTLING_ERRO</mark></p>
+<p><strong>Throttling Error</strong></p>
+<p>In case when submission fails with <mark>RC_THROTTLING_ERROR</mark>, the customer should wait one second and then retry the submission.</p>
+<p><strong>Internal server Error</strong></p>
+<p>In case when submission fails with HTTP status code <mark>500 INTERNAL_SERVER_ERROR</mark>, the customer should wait at least one minute and then retry the submission.</p>
+<h2 id="receiving-dlr"><strong>Receiving DLR</strong></h2>
+<p>Delivery reports are sent to the customer to the URL provided in JSON field "dlrUrl" when submitting an SMS. Alternatively, the account could be set up with a default value for "dlrUrl".</p>
+<p>It is JSON encoded, with the following form:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;msgId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9325d0a8-2638-11e6-afe7-bffc7cc8fa4f&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DELIVERED&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="nt">&quot;errorCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="nt">&quot;errorMessage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="nt">&quot;partNum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="nt">&quot;numParts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">    </span><span class="nt">&quot;accountName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;testuser&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span><span class="s2">&quot;sendTime”: 0,</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="s2">    &quot;</span><span class="err">dlrTime&quot;: 2</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="err">}</span>
+</code></pre></div></td></tr></table></div>
+Fields in DLR:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msgId</td>
+<td>string</td>
+<td>ID of the message, the one returned when SMS is submitted.</td>
+</tr>
+<tr>
+<td>event</td>
+<td>string</td>
+<td>One of DELIVERED, UNDELIVERED, REJECTED, BUFFERED, SENT_TO_SMSC.</td>
+</tr>
+<tr>
+<td>errorCode</td>
+<td>integer</td>
+<td>Error code, a reason for delivery failure (check DLR error code list in the next section). Zero represents no error.</td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td>string</td>
+<td>A message associated with errorCode.</td>
+</tr>
+<tr>
+<td>numParts</td>
+<td>integer</td>
+<td>Total number of concatenated parts. If message is not concatenated then numParts=1.</td>
+</tr>
+<tr>
+<td>partNum</td>
+<td>integer</td>
+<td>A part number. It can be from [0..numParts-1] interval.</td>
+</tr>
+<tr>
+<td>sendTime</td>
+<td>integer</td>
+<td>Seconds passed from SMS submission until Bulk Service successfully sent SMS to the route (next hop).</td>
+</tr>
+<tr>
+<td>dlrTime</td>
+<td>integer</td>
+<td>Seconds passed from SMS being sent to the route (next hop) until the delivery report was received.</td>
+</tr>
+</tbody>
+</table>
+<p>Depending on an account settings, DLR may contain additional fields:</p>
+<ul>
+<li>mcc - Mobile Country Code discovered for the destination number.</li>
+<li>mnc - Mobile Network Code discovered for the destination number.</li>
+<li>country - ISO2 code of the country where the destination number is registered.</li>
+<li>price - The price of the SMS (this information is informal and may be subject to change).</li>
+<li>currency - The currency of the price.</li>
+</ul>
+<p>If SMS is submitted with "custom" field, DLR will have:</p>
+<ul>
+<li>custom - The same object sent back in each DLR.</li>
+</ul>
+<p>When a message is concatenated, it is submitted by the customer as one submission, and then split by Bulk Service to required number of SMS parts. DLRs are sent to the Callback URL for each SMS part independently.</p>
+<h3 id="dlr-error-codes"><strong>DLR Error Codes</strong></h3>
+<p>DLR error codes are given in the following table:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Value (dec)</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>No error</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Unknown subscriber</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Illegal subscriber</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Teleservice not provisioned</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Call barred</td>
+</tr>
+<tr>
+<td>15</td>
+<td>CUG reject</td>
+</tr>
+<tr>
+<td>19</td>
+<td>No SMS support in MS</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Error in MS</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Facility not supported</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Memory capacity exceeded</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Absent subscriber</td>
+</tr>
+<tr>
+<td>30</td>
+<td>MS busy for MT SMS</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Network/Protocol failure</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Illegal equipment</td>
+</tr>
+<tr>
+<td>60</td>
+<td>No paging response</td>
+</tr>
+<tr>
+<td>61</td>
+<td>GMSC congestion</td>
+</tr>
+<tr>
+<td>63</td>
+<td>HLR timeout</td>
+</tr>
+<tr>
+<td>64</td>
+<td>MSC/SGSN timeout</td>
+</tr>
+<tr>
+<td>70</td>
+<td>SMRSE/TCP error</td>
+</tr>
+<tr>
+<td>72</td>
+<td>MT congestion</td>
+</tr>
+<tr>
+<td>75</td>
+<td>GPRS suspended</td>
+</tr>
+<tr>
+<td>80</td>
+<td>No paging response via MSC</td>
+</tr>
+<tr>
+<td>81</td>
+<td>IMSI detached</td>
+</tr>
+<tr>
+<td>82</td>
+<td>Roaming restriction</td>
+</tr>
+<tr>
+<td>83</td>
+<td>Deregistered in HLR for GSM</td>
+</tr>
+<tr>
+<td>84</td>
+<td>Purged for GSM</td>
+</tr>
+<tr>
+<td>85</td>
+<td>No paging response via SGSN</td>
+</tr>
+<tr>
+<td>86</td>
+<td>GPRS detached</td>
+</tr>
+<tr>
+<td>87</td>
+<td>Deregistered in HLR for GPRS</td>
+</tr>
+<tr>
+<td>88</td>
+<td>The MS purged for GPRS</td>
+</tr>
+<tr>
+<td>89</td>
+<td>Unidentified subscriber via MSC</td>
+</tr>
+<tr>
+<td>90</td>
+<td>Unidentified subscriber via SGSN</td>
+</tr>
+<tr>
+<td>112</td>
+<td>Originator missing credit on prepaid account</td>
+</tr>
+<tr>
+<td>113</td>
+<td>Destination missing credit on prepaid account</td>
+</tr>
+<tr>
+<td>114</td>
+<td>Error in prepaid system</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Other error</td>
+</tr>
+<tr>
+<td>990</td>
+<td>HLR failure</td>
+</tr>
+<tr>
+<td>991</td>
+<td>Rejected by message text filter</td>
+</tr>
+<tr>
+<td>992</td>
+<td>Ported numbers not supported on destination</td>
+</tr>
+<tr>
+<td>993</td>
+<td>Blacklisted sender</td>
+</tr>
+<tr>
+<td>994</td>
+<td>No credit</td>
+</tr>
+<tr>
+<td>995</td>
+<td>Undeliverable</td>
+</tr>
+<tr>
+<td>996</td>
+<td>Validity expired</td>
+</tr>
+<tr>
+<td>997</td>
+<td>Blacklisted receiver</td>
+</tr>
+<tr>
+<td>998</td>
+<td>No route</td>
+</tr>
+<tr>
+<td>999</td>
+<td>Repeated submission (possible looping)</td>
+</tr>
+</tbody>
+</table>
+<p>Delivery error codes are very often unreliable because of a lack of standards in messaging protocols. Bulk Service tries to provide the best effort to unify error code values. Error codes returned by underlying routes are mapped to the above table.</p>
+<h3 id="delivery-report-events"><strong>Delivery Report Events</strong></h3>
+<p>Delivery events that Celetel Bulk Service sends to the Callback are:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>DLR mask value</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DELIVERED</td>
+<td>1</td>
+<td>Delivered to phone, final status.</td>
+</tr>
+<tr>
+<td>UNDELIVERED</td>
+<td>2</td>
+<td>Non-Delivered to Phone, final status.</td>
+</tr>
+<tr>
+<td>BUFFERED</td>
+<td>4</td>
+<td>Queued on SMSC, temporary status.</td>
+</tr>
+<tr>
+<td>SENT_TO_SMSC</td>
+<td>8</td>
+<td>Delivered to SMSC, temporary status.</td>
+</tr>
+<tr>
+<td>REJECTED</td>
+<td>16</td>
+<td>Non-Delivered to SMSC, final status.</td>
+</tr>
+</tbody>
+</table>
+<p>Statuses described with 'final status' are final delivery reports – no further delivery reports will be sent for the message. Statuses described with 'temporary status' are of two kinds:</p>
+<ul>
+<li>Queued on SMSC usually means that there was some problem delivering the message to the mobile phone, and further DLRs will follow.</li>
+<li>Queued on SMSC means that Celetel Bulk Service sent the message to the destination network.</li>
+</ul>
+<p>DLR Mask set for each sent message can be a combination of these values. For example, 1+2+16=19 means that all the final statuses will be reported (DELIVERED, UNDELIVERED, REJECTED). DLR Mask 19 is recommended.</p>
+<p>Temporary statuses are not always available, and it may depend on various criteria when they can be sent.</p>
+<h2 id="additional-tables"><strong>Additional Tables</strong></h2>
+<h3 id="gsm-character-set"><strong>GSM character set</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Dec</strong></th>
+<th><strong>0</strong></th>
+<th><strong>16</strong></th>
+<th><strong>32</strong></th>
+<th><strong>48</strong></th>
+<th><strong>64</strong></th>
+<th><strong>80</strong></th>
+<th><strong>96</strong></th>
+<th><strong>112</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hex</td>
+<td>0</td>
+<td>10</td>
+<td>20</td>
+<td>30</td>
+<td>40</td>
+<td>50</td>
+<td>60</td>
+<td>70</td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>@</td>
+<td>Δ</td>
+<td>SP</td>
+<td>0</td>
+<td>¡</td>
+<td>P</td>
+<td>p</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>£</td>
+<td>_</td>
+<td>!</td>
+<td>1</td>
+<td>A</td>
+<td>Q</td>
+<td>a</td>
+<td>q</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>$</td>
+<td>Φ</td>
+<td>“</td>
+<td>2</td>
+<td>B</td>
+<td>R</td>
+<td>b</td>
+<td>r</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>¥</td>
+<td>Γ</td>
+<td>#</td>
+<td>3</td>
+<td>C</td>
+<td>S</td>
+<td>c</td>
+<td>s</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>è</td>
+<td>Λ</td>
+<td>¤</td>
+<td>4</td>
+<td>D</td>
+<td>T</td>
+<td>d</td>
+<td>t</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>é</td>
+<td>Ω</td>
+<td>%</td>
+<td>5</td>
+<td>E</td>
+<td>U</td>
+<td>e</td>
+<td>u</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>ù</td>
+<td>Π</td>
+<td>&amp;</td>
+<td>6</td>
+<td>F</td>
+<td>V</td>
+<td>f</td>
+<td>v</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7</td>
+<td>ì</td>
+<td>Ψ</td>
+<td>‘</td>
+<td>7</td>
+<td>G</td>
+<td>W</td>
+<td>g</td>
+<td>w</td>
+</tr>
+<tr>
+<td>8</td>
+<td>8</td>
+<td>ò</td>
+<td>Σ</td>
+<td>(</td>
+<td>8</td>
+<td>H</td>
+<td>X</td>
+<td>h</td>
+<td>x</td>
+</tr>
+<tr>
+<td>9</td>
+<td>9</td>
+<td>Ç</td>
+<td>Θ</td>
+<td>)</td>
+<td>9</td>
+<td>I</td>
+<td>Y</td>
+<td>i</td>
+<td>y</td>
+</tr>
+<tr>
+<td>10</td>
+<td>A</td>
+<td>LF</td>
+<td>Ξ</td>
+<td>*</td>
+<td>:</td>
+<td>J</td>
+<td>Z</td>
+<td>j</td>
+<td>z</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+<td>Ø</td>
+<td>+</td>
+<td>;</td>
+<td>K</td>
+<td>Ä</td>
+<td>k</td>
+<td>ä</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+<td>ø</td>
+<td>Æ</td>
+<td>,</td>
+<td>&lt;</td>
+<td>L</td>
+<td>Ö</td>
+<td>l</td>
+<td>ö</td>
+</tr>
+<tr>
+<td>13</td>
+<td>D</td>
+<td>CR</td>
+<td>æ</td>
+<td>-</td>
+<td>=</td>
+<td>M</td>
+<td>Ñ</td>
+<td>m</td>
+<td>ñ</td>
+</tr>
+<tr>
+<td>14</td>
+<td>E</td>
+<td>Å</td>
+<td>.</td>
+<td>&gt;</td>
+<td>N</td>
+<td>Ü</td>
+<td>n</td>
+<td>ü</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>F</td>
+<td>å</td>
+<td>É</td>
+<td>/</td>
+<td>?</td>
+<td>O</td>
+<td>§</td>
+<td>o</td>
+<td>à</td>
+</tr>
+</tbody>
+</table>
+<p>Additional characters on GSM phones (in conversion to GSM character set counted as two characters):</p>
+<table>
+<thead>
+<tr>
+<th><strong>You want to send ASCII</strong></th>
+<th><strong>Send the following</strong></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Character</td>
+<td>Decimal</td>
+<td>Hex</td>
+<td>Characters</td>
+<td>Hex</td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td>€</td>
+<td></td>
+<td></td>
+<td><ESC> e</td>
+<td>1B 65</td>
+<td>27 101</td>
+</tr>
+<tr>
+<td><FF></td>
+<td>10</td>
+<td>0C</td>
+<td><ESC> <LF></td>
+<td>1B 0A</td>
+<td>27 10</td>
+</tr>
+<tr>
+<td>[</td>
+<td>91</td>
+<td>5B</td>
+<td><ESC> &lt;</td>
+<td>1B 3C</td>
+<td>27 60</td>
+</tr>
+<tr>
+<td>\</td>
+<td>92</td>
+<td>5C</td>
+<td><ESC> /</td>
+<td>1B 2F</td>
+<td>27 47</td>
+</tr>
+<tr>
+<td>]</td>
+<td>93</td>
+<td>5D</td>
+<td><ESC> &gt;</td>
+<td>1B 3E</td>
+<td>27 62</td>
+</tr>
+<tr>
+<td>^</td>
+<td>94</td>
+<td>5E</td>
+<td><ESC> ^</td>
+<td>1B 14</td>
+<td>27 20</td>
+</tr>
+<tr>
+<td>{</td>
+<td>123</td>
+<td>7B</td>
+<td><ESC> (</td>
+<td>1B 28</td>
+<td>27 40</td>
+</tr>
+<tr>
+<td>|</td>
+<td>124</td>
+<td>7C</td>
+<td><ESC> @</td>
+<td>1B 40</td>
+<td>27 64</td>
+</tr>
+<tr>
+<td>}</td>
+<td>125</td>
+<td>7A</td>
+<td><ESC> )</td>
+<td>1B 29</td>
+<td>27 41</td>
+</tr>
+<tr>
+<td>~</td>
+<td>126</td>
+<td>7E</td>
+<td><ESC> =</td>
+<td>1B 3D</td>
+<td>27 61</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-characters-in-alphanumeric-sender"><strong>Supported Characters in Alphanumeric Sender</strong></h3>
+<p>When the SMS sender is alphanumeric, it can contain characters in the printable ASCII set, but depending on the destination being used some characters may not work.</p>
+<p>The following tables give recommendations on which characters are typically supported.</p>
+<h4 id="special-characters"><strong>Special characters</strong></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supported</strong></td>
+<td></td>
+<td><strong>Not Supported</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Character</td>
+<td>ASCII Code</td>
+<td>Character</td>
+<td>ASCII Code</td>
+</tr>
+<tr>
+<td>SPACE</td>
+<td>0×20</td>
+<td>$</td>
+<td>0×24</td>
+</tr>
+<tr>
+<td>!</td>
+<td>0×21</td>
+<td>@</td>
+<td>0×40</td>
+</tr>
+<tr>
+<td>“</td>
+<td>0×22</td>
+<td>[</td>
+<td>0x5B</td>
+</tr>
+<tr>
+<td>#</td>
+<td>0×23</td>
+<td>\</td>
+<td>0x5C</td>
+</tr>
+<tr>
+<td>%</td>
+<td>0×25</td>
+<td>]</td>
+<td>0x5D</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>0×26</td>
+<td>^</td>
+<td>0x5E</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>0×27</td>
+<td>_</td>
+<td>0x5F</td>
+</tr>
+<tr>
+<td>(</td>
+<td>0×28</td>
+<td>`</td>
+<td>0×60</td>
+</tr>
+<tr>
+<td>)</td>
+<td>0×29</td>
+<td>{</td>
+<td>0x7B</td>
+</tr>
+<tr>
+<td>*</td>
+<td>0x2A</td>
+<td>|</td>
+<td>0x7C</td>
+</tr>
+<tr>
+<td>+</td>
+<td>0x2B</td>
+<td>}</td>
+<td>0x7D</td>
+</tr>
+<tr>
+<td>,</td>
+<td>0x2C</td>
+<td>~</td>
+<td>0x7E</td>
+</tr>
+<tr>
+<td>-</td>
+<td>0x2D</td>
+<td>€</td>
+<td></td>
+</tr>
+<tr>
+<td>.</td>
+<td>0x2E</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td>0x2F</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>:</td>
+<td>0x3A</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>;</td>
+<td>0x3B</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>0x3C</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>=</td>
+<td>0x3D</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>0x3E</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>0x3F</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-letters-and-digits"><strong>Supported Letters and Digits</strong></h4>
+<ul>
+<li>0123456789</li>
+<li>abcdefghijklmnopqrstuvwxyz</li>
+<li>ABCDEFGHIJKLMNOPQRSTUVWXYZ</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://celetel.com"  target="_blank" rel="noopener">Celetel Technologies Pvt Ltd</a>
+
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
