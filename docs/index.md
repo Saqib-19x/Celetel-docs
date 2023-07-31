@@ -377,7 +377,7 @@ Delivery error codes are very often unreliable because of a lack of standards in
 
 ### **Delivery Report Events**
 
-Delivery events that HORISEN Bulk Service sends to the Callback are:
+Delivery events that Celetel Bulk Service sends to the Callback are:
 
 | **Name** 	| **DLR mask value** 	| **Description** 	|
 |---	|---	|---	|
@@ -390,7 +390,7 @@ Delivery events that HORISEN Bulk Service sends to the Callback are:
 Statuses described with 'final status' are final delivery reports – no further delivery reports will be sent for the message. Statuses described with 'temporary status' are of two kinds:
 
 - Queued on SMSC usually means that there was some problem delivering the message to the mobile phone, and further DLRs will follow.
-- Queued on SMSC means that HORISEN Bulk Service sent the message to the destination network.
+- Queued on SMSC means that Celetel Bulk Service sent the message to the destination network.
 
 DLR Mask set for each sent message can be a combination of these values. For example, 1+2+16=19 means that all the final statuses will be reported (DELIVERED, UNDELIVERED, REJECTED). DLR Mask 19 is recommended.
 
